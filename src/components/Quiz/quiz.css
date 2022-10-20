@@ -1,0 +1,28 @@
+.quiz-main{
+    width: 80%;
+    margin: 50px;
+    text-align: center;
+}
+.welcome-name{
+    font-size: 1.5rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 1px solid white;
+    box-shadow: 6px 5px 4px rgb(175, 157, 255);
+    width: fit-content;
+    margin: auto;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: rgb(140, 140, 255);
+    color: white;
+}
+.quiz-box{
+    margin: 20px;
+}
+
+.quiz-box .heading{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+

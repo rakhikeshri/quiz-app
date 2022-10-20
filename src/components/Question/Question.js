@@ -55,15 +55,15 @@ const Question = ({
     }
 
     return (
-        <div>
-            <h1>Question {currques + 1}</h1>
+        <div className='question-Container'>
+            <h2>Question {currques + 1}</h2>
 
-            <div>
-                <h2>{questions[currques].question}</h2>
+            <div className='question-Box'>
+                <h2 style={{border: '1px solid black'}}>{questions[currques].question}</h2>
                 <div className='options'>
                 {error && <ErrorMessage />}
                 {
-                    options && options.map((i) => <button key={i} disabled={selected} onClick={() => handleCheck(i)} className={`${selected && handleSelect(i)}`}>{i}</button>)
+                    options && options.map((i) => <button key={i} disabled={selected} onClick={() => handleCheck(i)} className={`singleOptions ${selected && handleSelect(i)}`}>{i}</button>)
                 }
                 </div>
                 <div>
