@@ -1,5 +1,5 @@
 import { Button, MenuItem, TextField } from '@mui/material'
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import './Home.css'
 import Categories from '../Data/Categories.js'
 import { useNavigate } from 'react-router-dom'
@@ -14,10 +14,10 @@ const Home = ({ name, setName, fetchQuestions }) => {
   const navigate = useNavigate()
 
   const handleSubmit = () => {
-    if(!category || !name || !difficulty) {
+    if (!category || !name || !difficulty) {
       setError(true)
       return
-    }else{
+    } else {
       setError(false)
       fetchQuestions(category, difficulty)
       navigate('/quiz')
@@ -26,15 +26,16 @@ const Home = ({ name, setName, fetchQuestions }) => {
 
   return (
     <div className='content'>
+      <img className='image' src='image.png'></img>
       <div>
-        <h1>Quiz Settings</h1>
-        <br />
         <div className='inputs'>
+        <h1 className='quiz-setting'>Start Playing</h1>
 
           {error && <ErrorMessage> fill it all</ErrorMessage>}
 
-          <TextField variant='outlined' label='enter your name' onChange={(e) => setName(e.target.value)}/>
-          <TextField variant='outlined' label='Category' select onChange={(e) => setCategory(e.target.value)} value={category}>
+          <TextField className='input-fields' variant='outlined' label='enter your name' onChange={(e) => setName(e.target.value)} />
+
+          <TextField className='input-fields' variant='outlined' label='Category' select onChange={(e) => setCategory(e.target.value)} value={category}>
             {Categories.map((cat) => (
               <MenuItem key={cat.category} value={cat.value}>
                 {cat.category}
@@ -42,16 +43,16 @@ const Home = ({ name, setName, fetchQuestions }) => {
             ))}
           </TextField>
 
-          <TextField variant='outlined' label='Difficulty' select onChange={(e) => setDifficulty(e.target.value)} value={difficulty} >
-              <MenuItem key='easy' value='easy'>
-                Easy
-              </MenuItem>
-              <MenuItem key='medium' value='medium'>
-                Medium
-              </MenuItem>
-              <MenuItem key='hard' value='hard'>
-                Hard
-              </MenuItem>
+          <TextField className='input-fields' variant='outlined' label='Difficulty' select onChange={(e) => setDifficulty(e.target.value)} value={difficulty} >
+            <MenuItem key='easy' value='easy'>
+              Easy
+            </MenuItem>
+            <MenuItem key='medium' value='medium'>
+              Medium
+            </MenuItem>
+            <MenuItem key='hard' value='hard'>
+              Hard
+            </MenuItem>
           </TextField>
 
           <Button variant='contained' color='primary' size='large' onClick={handleSubmit}>Start Quiz</Button>

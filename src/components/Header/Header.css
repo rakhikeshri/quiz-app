@@ -1,0 +1,13 @@
+.quizapp-heading{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.quiz-head-link{
+    color: black;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgb(77, 117, 248);
+    padding: 3px 15px ;
+    padding-bottom: 7px;
+    text-decoration: none;
+}
